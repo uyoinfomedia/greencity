@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Green City Estate, Uyo — Site Inspection & Plot Information | Uyoinfomedia</title>
+<meta name="description" content="Green City Estate, Uyo — promotional information pack and site inspection booking, presented by Uyoinfomedia.">
+<style>
+  :root{
+    --cream:#F1ECE0;
+    --paper:#FAF7EF;
+    --ink:#211F19;
+    --forest:#2E4636;
+    --forest-dim:#3E5B47;
+    --clay:#B5602A;
+    --clay-dim:#D98548;
+    --gold:#C9992F;
+    --line:#D8CFB9;
+    --maxw:960px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'IBM Plex Sans', -apple-system, Helvetica, Arial, sans-serif;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.serif{
+    font-family:'Source Serif 4', Georgia, 'Times New Roman', serif;
+    font-weight:600;
+    letter-spacing:-0.01em;
+  }
+  a{color:inherit;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px;}
+  section{padding:64px 0;}
+  @media(max-width:640px){ section{padding:44px 0;} }
+
+  /* ---- plot-grid motif, used sparingly as a structural device ---- */
+  .plotline{position:relative;}
+  .plotline::before{
+    content:"";
+    position:absolute; left:0; top:0; bottom:0; width:3px;
+    background:repeating-linear-gradient(to bottom, var(--clay) 0 6px, transparent 6px 12px);
+  }
+
+  /* ---- header ---- */
+  header{
+    background:var(--forest);
+    color:var(--paper);
+    padding:14px 0;
+    position:sticky; top:0; z-index:50;
+    border-bottom:1px solid rgba(255,255,255,.08);
+  }
+  header .wrap{display:flex;align-items:center;justify-content:space-between;}
+  .brand{
+    font-family:'Source Serif 4', serif;
+    font-weight:600;
+    font-size:17px;
+    letter-spacing:0.01em;
+  }
+  .brand em{font-style:normal;color:var(--clay-dim);}
+  .header-cta{
+    font-size:13px;
+    background:var(--clay);
+    color:var(--paper);
+    padding:8px 14px;
+    border-radius:3px;
+    text-decoration:none;
+    white-space:nowrap;
+  }
+
+  /* ---- hero: schematic site plan instead of a stock photo ---- */
+  .hero{
+    background:var(--forest);
+    color:var(--paper);
+    padding:56px 0 0 0;
+    overflow:hidden;
+  }
+  .hero .wrap{
+    display:grid; grid-template-columns:1.1fr 1fr; gap:40px; align-items:end;
+  }
+  @media(max-width:800px){ .hero .wrap{grid-template-columns:1fr;} }
+  .hero-eyebrow{
+    font-size:13px; color:var(--clay-dim); margin-bottom:14px;
+  }
+  .hero h1{font-size:clamp(34px,6vw,52px); line-height:1.06; max-width:11ch;}
+  .hero p{margin-top:18px; max-width:42ch; color:#E4E0D2; font-size:16px;}
+  .hero-plan{
+    align-self:end;
+  }
+  .plan-svg{width:100%; height:auto; display:block;}
+  .hero-price{
+    margin-top:8px; font-size:12.5px; color:var(--clay-dim); text-align:right;
+  }
+
+  /* ---- section headings ---- */
+  .kicker{font-size:13px; color:var(--clay); font-weight:600;}
+  h2{font-size:clamp(24px,4vw,32px); margin-top:6px; margin-bottom:28px;}
+
+  /* ---- vision block ---- */
+  .vision-grid{display:grid; grid-template-columns:1fr 1fr 1fr; gap:0;}
+  @media(max-width:700px){.vision-grid{grid-template-columns:1fr;}}
+  .vision-item{
+    border-top:2px solid var(--forest);
+    padding:18px 20px 18px 0;
+  }
+  .vision-item + .vision-item{border-left:1px solid var(--line);padding-left:20px;}
+  @media(max-width:700px){
+    .vision-item + .vision-item{border-left:none; border-top:1px solid var(--line);}
+  }
+  .vision-item h3{font-size:16px; margin-bottom:8px;}
+  .vision-item p{font-size:14.5px; color:#4A4638;}
+
+  /* ---- features: laid out as plots on a strip, not cards ---- */
+  .features{background:var(--paper); border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
+  .feat-strip{display:grid; grid-template-columns:repeat(4,1fr); border:1px solid var(--line);}
+  @media(max-width:700px){.feat-strip{grid-template-columns:repeat(2,1fr);}}
+  .feat{
+    padding:22px 16px;
+    border-right:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+    font-size:14px;
+  }
+  .feat:nth-child(4n){border-right:none;}
+  @media(max-width:700px){ .feat:nth-child(2n){border-right:none;} .feat:nth-child(4n){border-right:1px solid var(--line);} }
+  .feat .n{display:block; color:var(--clay); font-family:'Source Serif 4',serif; font-size:20px; margin-bottom:6px;}
+
+  /* ---- zoning ---- */
+  .zone-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:14px;}
+  @media(max-width:700px){.zone-grid{grid-template-columns:1fr;}}
+  .zone{
+    background:var(--paper);
+    border:1px solid var(--line);
+    padding:22px;
+  }
+  .zone .swatch{width:34px;height:34px;border-radius:2px;margin-bottom:14px;}
+  .zone h3{font-size:15px; margin-bottom:8px;}
+  .zone p{font-size:13.5px; color:#4A4638;}
+  .z1 .swatch{background:var(--clay);}
+  .z2 .swatch{background:var(--forest-dim);}
+  .z3 .swatch{background:var(--gold);}
+  .price{margin-top:10px; font-family:'Source Serif 4',serif; font-size:15px; color:var(--forest);}
+
+  /* ---- gallery ---- */
+  .gallery-note{font-size:13.5px; color:#4A4638; max-width:60ch; margin-bottom:24px;}
+  .gallery{display:grid; grid-template-columns:repeat(3,1fr); gap:14px;}
+  @media(max-width:700px){.gallery{grid-template-columns:1fr 1fr;}}
+  .gallery figure{margin:0;}
+  .gallery img{
+    width:100%; aspect-ratio:4/3; object-fit:cover;
+    border:1px solid var(--line); display:block;
+  }
+  .gallery figcaption{
+    font-size:12px; color:#6B6656; margin-top:6px;
+  }
+  .gallery figcaption .tag{
+    display:inline-block; font-size:10.5px; font-weight:600;
+    padding:2px 6px; border-radius:2px; margin-right:6px;
+  }
+  .tag-current{background:var(--forest); color:var(--paper);}
+  .tag-concept{background:var(--gold); color:var(--ink);}
+
+  /* ---- timeline ---- */
+  .timeline{list-style:none;}
+  .timeline li{
+    display:grid; grid-template-columns:64px 1fr; gap:16px;
+    padding:14px 0; border-bottom:1px solid var(--line);
+    align-items:baseline;
+  }
+  .timeline li:last-child{border-bottom:none;}
+  .timeline .mo{font-size:12.5px; color:var(--clay); font-weight:600;}
+  .timeline .stage{font-size:15px;}
+
+  /* ---- agent / attribution panel ---- */
+  .agent{
+    background:var(--forest);
+    color:var(--paper);
+  }
+  .agent .wrap{padding-top:8px;}
+  .agent-box{
+    border:1px solid rgba(255,255,255,.18);
+    padding:28px;
+  }
+  .agent-box h2{color:var(--paper); margin-bottom:14px;}
+  .agent-box p{color:#DAD6C7; font-size:14.5px; max-width:60ch; margin-bottom:10px;}
+  .agent-note{
+    font-size:13px; color:#B9C4B4; margin-top:18px; border-top:1px solid rgba(255,255,255,.15); padding-top:16px;
+  }
+  .cta-row{display:flex; gap:12px; flex-wrap:wrap; margin-top:20px;}
+  .btn{
+    display:inline-block; padding:13px 22px; font-size:14.5px; text-decoration:none;
+    border-radius:3px; font-weight:600;
+  }
+  .btn-primary{background:var(--clay); color:var(--paper);}
+  .btn-ghost{border:1px solid rgba(255,255,255,.4); color:var(--paper);}
+
+  footer{
+    padding:26px 0 40px;
+    font-size:12.5px;
+    color:#6B6656;
+  }
+  footer a{text-decoration:underline;}
+
+  /* sticky mobile inspection bar */
+  .stickybar{
+    position:fixed; left:0; right:0; bottom:0; z-index:60;
+    background:var(--clay); color:var(--paper);
+    display:flex; align-items:center; justify-content:center;
+    padding:13px 16px; font-size:14.5px; font-weight:600;
+    text-decoration:none;
+  }
+  @media(min-width:801px){ .stickybar{display:none;} }
+  body{padding-bottom:56px;}
+  @media(min-width:801px){ body{padding-bottom:0;} }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="brand">Uyoinfomedia <em>· media desk</em></div>
+    <a class="header-cta" href="#inspect">Book inspection</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <div class="hero-eyebrow">Promotional information pack · Uyo, Akwa Ibom</div>
+      <h1>Green City Estate</h1>
+      <p>A residential, commercial and green-zone estate on Uyo's outskirts. This pack is prepared and distributed by Uyoinfomedia as an authorized promotional partner — book a guided inspection through the desk below.</p>
+    </div>
+    <div class="hero-plan">
+      <svg class="plan-svg" viewBox="0 0 380 220" xmlns="http://www.w3.org/2000/svg">
+        <rect x="0" y="0" width="380" height="220" fill="none"/>
+        <g stroke="#5B7A64" stroke-width="1">
+          <line x1="0" y1="55" x2="380" y2="55"/>
+          <line x1="0" y1="110" x2="380" y2="110"/>
+          <line x1="0" y1="165" x2="380" y2="165"/>
+          <line x1="95" y1="0" x2="95" y2="220"/>
+          <line x1="190" y1="0" x2="190" y2="220"/>
+          <line x1="285" y1="0" x2="285" y2="220"/>
+        </g>
+        <rect x="4" y="4" width="87" height="47" fill="#B5602A" opacity="0.55"/>
+        <rect x="99" y="4" width="87" height="47" fill="#C9992F" opacity="0.55"/>
+        <rect x="194" y="59" width="87" height="47" fill="#3E5B47" opacity="0.7"/>
+        <rect x="289" y="59" width="87" height="47" fill="#B5602A" opacity="0.4"/>
+        <rect x="4" y="114" width="87" height="47" fill="#3E5B47" opacity="0.5"/>
+        <rect x="194" y="169" width="87" height="47" fill="#C9992F" opacity="0.4"/>
+        <rect x="99" y="169" width="87" height="47" fill="#3E5B47" opacity="0.55"/>
+      </svg>
+      <p class="hero-price">Serviced plots from ₦10,000 / sqm</p>
+    </div>
+  </div>
+</section>
+
+<section class="plotline">
+  <div class="wrap">
+    <div class="kicker">Vision</div>
+    <h2>A model for integrated, sustainable urban living</h2>
+    <div class="vision-grid">
+      <div class="vision-item">
+        <h3>Goal</h3>
+        <p>Promote economic development alongside environmental sustainability, on a single serviced site.</p>
+      </div>
+      <div class="vision-item">
+        <h3>Approach</h3>
+        <p>Eco-friendly architecture, smart systems, and community-centered planning throughout.</p>
+      </div>
+      <div class="vision-item">
+        <h3>Who it's for</h3>
+        <p>Residents, investors, tourists and green-industry occupants across the four zone types.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="features">
+  <div class="wrap">
+    <div class="kicker">Main features</div>
+    <h2>What's included on site</h2>
+    <div class="feat-strip">
+      <div class="feat"><span class="n">01</span>Green spaces and parks</div>
+      <div class="feat"><span class="n">02</span>Good road network</div>
+      <div class="feat"><span class="n">03</span>Eco-friendly architecture</div>
+      <div class="feat"><span class="n">04</span>Sustainable infrastructure</div>
+      <div class="feat"><span class="n">05</span>Integrated communities</div>
+      <div class="feat"><span class="n">06</span>Bicycle lanes & walkways</div>
+      <div class="feat"><span class="n">07</span>Renewable energy options</div>
+      <div class="feat"><span class="n">08</span>EV recharge stations</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="kicker">Zoning plan</div>
+    <h2>Three ways to buy in</h2>
+    <div class="zone-grid">
+      <div class="zone z1">
+        <div class="swatch"></div>
+        <h3>Free-hold</h3>
+        <p>Bulk land for commercial, industrial or agricultural use.</p>
+      </div>
+      <div class="zone z2">
+        <div class="swatch"></div>
+        <h3>Serviced plots</h3>
+        <p>For individual residential development, sold as titled plots.</p>
+        <p class="price">₦10,000 / sqm</p>
+      </div>
+      <div class="zone z3">
+        <div class="swatch"></div>
+        <h3>Residential estate</h3>
+        <p>Apartments, terraces, and detached / semi-detached units.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="plotline">
+  <div class="wrap">
+    <div class="kicker">Community & social infrastructure</div>
+    <h2>Beyond the plots</h2>
+    <div class="vision-grid">
+      <div class="vision-item"><h3>Schools & training</h3><p>Training centers planned within the estate boundary.</p></div>
+      <div class="vision-item"><h3>Healthcare</h3><p>On-site healthcare facilities for residents.</p></div>
+      <div class="vision-item"><h3>Religious centers</h3><p>Places of worship integrated into the community layout.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="kicker">Site gallery</div>
+    <h2>Current site and the masterplan ahead</h2>
+    <p class="gallery-note">Green City Estate is a planned development. The first two images below are the site as it stands today; the remaining three are conceptual illustrations of the finished estate and do not depict the current site.</p>
+    <div class="gallery">
+      <figure>
+        <img src="image1.png" alt="Green City Estate site, current state" loading="lazy">
+        <figcaption><span class="tag tag-current">Current site</span>As of inspection, 2026</figcaption>
+      </figure>
+      <figure>
+        <img src="image2.png" alt="Green City Estate site, current state" loading="lazy">
+        <figcaption><span class="tag tag-current">Current site</span>As of inspection, 2026</figcaption>
+      </figure>
+      <figure>
+        <img src="image3.png" alt="Conceptual illustration of the planned estate" loading="lazy">
+        <figcaption><span class="tag tag-concept">Conceptual</span>Not the actual site</figcaption>
+      </figure>
+      <figure>
+        <img src="image4.png" alt="Conceptual illustration of the planned estate" loading="lazy">
+        <figcaption><span class="tag tag-concept">Conceptual</span>Not the actual site</figcaption>
+      </figure>
+      <figure>
+        <img src="image5.png" alt="Conceptual illustration of the planned estate" loading="lazy">
+        <figcaption><span class="tag tag-concept">Conceptual</span>Not the actual site</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="features">
+  <div class="wrap">
+    <div class="kicker">Timeline · 24 months</div>
+    <h2>Development phases</h2>
+    <ul class="timeline">
+      <li><span class="mo">Mo. 1–3</span><span class="stage">Pre-development stage</span></li>
+      <li><span class="mo">Mo. 3–5</span><span class="stage">Planning & approvals</span></li>
+      <li><span class="mo">Mo. 5–10</span><span class="stage">Infrastructure development</span></li>
+      <li><span class="mo">Mo. 10–18</span><span class="stage">Building construction phase</span></li>
+      <li><span class="mo">Mo. 16–20</span><span class="stage">Landscaping & finishing</span></li>
+      <li><span class="mo">Mo. 20–24</span><span class="stage">Testing, handover & launch</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="agent" id="inspect">
+  <div class="wrap">
+    <div class="agent-box">
+      <div class="kicker" style="color:var(--clay-dim);">Uyoinfomedia · media desk</div>
+      <h2>Book an official site inspection</h2>
+      <p>Uyoinfomedia is the promotional and inquiry channel for this ARISE app listing. Reach out below to schedule a guided visit or request the full pricing sheet — every inquiry routed here is logged against this campaign.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" id="waBtn" href="#" target="_blank" rel="noopener">Chat on WhatsApp</a>
+        <a class="btn btn-ghost" id="callBtn" href="#">Call the desk</a>
+      </div>
+      <p class="agent-note">This page is a promotional information pack distributed by Uyoinfomedia as an authorized media partner — not an official Green City Estate website.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    Prepared by Uyoinfomedia · Content sourced from the Green City Estate coordination brief (July 2025). Edit contact details in this file before publishing.
+  </div>
+</footer>
+
+<a class="stickybar" id="waBtnMobile" href="#" target="_blank" rel="noopener">Book inspection on WhatsApp →</a>
+
+<script>
+  // ---- EDIT THESE TWO VALUES BEFORE PUBLISHING ----
+  const WHATSAPP_NUMBER = "2349058346833"; // no + or leading zeros after country code
+  const CALL_NUMBER = "+2348109580708";
+  // --------------------------------------------------
+
+  const params = new URLSearchParams(window.location.search);
+  const source = params.get('src') || 'arise-app';
+
+  const message = `Hello Uyoinfomedia, I saw Green City Estate via ${source} and would like to book a site inspection.`;
+  const waLink = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+
+  document.getElementById('waBtn').href = waLink;
+  document.getElementById('waBtnMobile').href = waLink;
+  document.getElementById('callBtn').href = `tel:${CALL_NUMBER.replace(/\s/g,'')}`;
+  document.getElementById('callBtn').textContent = `Call ${CALL_NUMBER}`;
+</script>
+
+</body>
+</html>
