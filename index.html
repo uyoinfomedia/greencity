@@ -199,6 +199,7 @@
   }
   .btn-primary{background:var(--clay); color:var(--paper);}
   .btn-ghost{border:1px solid rgba(255,255,255,.4); color:var(--paper);}
+  .btn-secondary{border:1px solid var(--forest-dim); color:var(--forest);}
 
   footer{
     padding:26px 0 40px;
@@ -206,6 +207,19 @@
     color:#6B6656;
   }
   footer a{text-decoration:underline;}
+
+  /* ---- masterplan (approved layout plan) ---- */
+  .masterplan-note{font-size:13.5px; color:#4A4638; max-width:60ch; margin-bottom:20px;}
+  .masterplan-frame{
+    border:1px solid var(--line);
+    background:var(--paper);
+    padding:8px;
+  }
+  .masterplan-frame img{width:100%; height:auto; display:block;}
+  .masterplan-link{
+    display:inline-block; margin-top:14px; font-size:13px; color:var(--forest-dim);
+    text-decoration:underline;
+  }
 
   /* sticky mobile inspection bar */
   .stickybar{
@@ -343,25 +357,49 @@
     <p class="gallery-note">Green City Estate is a planned development. The first two images below are the site as it stands today; the remaining three are conceptual illustrations of the finished estate and do not depict the current site.</p>
     <div class="gallery">
       <figure>
-        <img src="image1.png" alt="Green City Estate site, current state" loading="lazy">
+        <img src="images/image1.png" alt="Green City Estate site, current state" loading="lazy">
         <figcaption><span class="tag tag-current">Current site</span>As of inspection, 2026</figcaption>
       </figure>
       <figure>
-        <img src="image2.png" alt="Green City Estate site, current state" loading="lazy">
+        <img src="images/image2.png" alt="Green City Estate site, current state" loading="lazy">
         <figcaption><span class="tag tag-current">Current site</span>As of inspection, 2026</figcaption>
       </figure>
       <figure>
-        <img src="image3.png" alt="Conceptual illustration of the planned estate" loading="lazy">
+        <img src="images/image3.png" alt="Conceptual illustration of the planned estate" loading="lazy">
         <figcaption><span class="tag tag-concept">Conceptual</span>Not the actual site</figcaption>
       </figure>
       <figure>
-        <img src="image4.png" alt="Conceptual illustration of the planned estate" loading="lazy">
+        <img src="images/image4.png" alt="Conceptual illustration of the planned estate" loading="lazy">
         <figcaption><span class="tag tag-concept">Conceptual</span>Not the actual site</figcaption>
       </figure>
       <figure>
-        <img src="image5.png" alt="Conceptual illustration of the planned estate" loading="lazy">
+        <img src="images/image5.png" alt="Conceptual illustration of the planned estate" loading="lazy">
         <figcaption><span class="tag tag-concept">Conceptual</span>Not the actual site</figcaption>
       </figure>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="kicker">Approved layout plan</div>
+    <h2>The full masterplan</h2>
+    <p class="masterplan-note">Green City Uyo's project — approved layout plan, scale 1:2000, total site area 268,357.29 sqm. Shown as filed: residential plots (high, medium & low density), commercial, institutional, industrial, agricultural, recreational and public utility zones, with road network and buffer zones.</p>
+    <div class="masterplan-frame">
+      <img src="images/masterplan-web.jpg" alt="Green City Uyo's Project — approved layout plan showing residential, commercial, institutional, industrial, agricultural, recreational and public utility zones" loading="lazy">
+    </div>
+    <a class="masterplan-link" href="images/masterplan-full.png" target="_blank" rel="noopener">View full-resolution plan &rarr;</a>
+  </div>
+</section>
+
+<section class="plotline">
+  <div class="wrap">
+    <div class="kicker">Documents</div>
+    <h2>Go deeper, or apply</h2>
+    <p class="masterplan-note">The full blueprint carries roughly 28 pages of detailed plans for serious buyers. The application form is the same one used on-site — fill it out ahead of your inspection to speed things along.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="assets/blueprint.pdf" target="_blank" rel="noopener">Download full blueprint (PDF)</a>
+      <a class="btn btn-secondary" href="assets/buyer-form.pdf" target="_blank" rel="noopener">Download application form (PDF)</a>
     </div>
   </div>
 </section>
