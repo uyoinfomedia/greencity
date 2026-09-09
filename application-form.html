@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Application Form — Green City Estate</title>
+<meta name="description" content="Green City Estate application form — fill in, print, or save as PDF.">
+<style>
+  :root{
+    --cream:#F1ECE0;
+    --paper:#FAF7EF;
+    --ink:#211F19;
+    --forest:#2E4636;
+    --forest-dim:#3E5B47;
+    --clay:#B5602A;
+    --clay-dim:#D98548;
+    --gold:#C9992F;
+    --line:#D8CFB9;
+    --maxw:760px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'IBM Plex Sans', -apple-system, Helvetica, Arial, sans-serif;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,.serif{
+    font-family:'Source Serif 4', Georgia, 'Times New Roman', serif;
+    font-weight:600;
+    letter-spacing:-0.01em;
+  }
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 20px 60px;}
+
+  header{
+    background:var(--forest);
+    color:var(--paper);
+    padding:28px 0;
+    margin-bottom:28px;
+  }
+  header .wrap{padding-bottom:0;}
+  .eyebrow{font-size:12.5px; color:var(--clay-dim); letter-spacing:.04em; text-transform:uppercase; margin-bottom:8px;}
+  header h1{font-size:clamp(24px,4vw,32px);}
+  .back-link{
+    display:inline-block; margin-top:14px; font-size:13px; color:#D6D1BF; text-decoration:underline;
+  }
+
+  fieldset{
+    border:none;
+    background:var(--paper);
+    border:1px solid var(--line);
+    padding:20px 22px;
+    margin-bottom:16px;
+  }
+  legend{
+    display:flex; align-items:center; gap:10px;
+    font-family:'Source Serif 4', serif; font-weight:600; font-size:15px;
+    color:var(--forest);
+    padding:0 6px;
+    text-transform:uppercase; letter-spacing:.03em;
+  }
+  legend .num{
+    display:inline-flex; align-items:center; justify-content:center;
+    width:20px; height:20px; border-radius:2px;
+    background:var(--clay); color:var(--paper);
+    font-size:12px; font-family:'IBM Plex Sans',sans-serif; font-weight:700;
+  }
+
+  .row{margin-top:14px;}
+  .row:first-of-type{margin-top:4px;}
+  .two-col{display:grid; grid-template-columns:1fr 1fr; gap:14px;}
+  @media(max-width:560px){ .two-col{grid-template-columns:1fr;} }
+
+  label{
+    display:block; font-size:12.5px; color:#5B5748; margin-bottom:5px;
+  }
+  input[type="text"], input[type="email"], input[type="tel"], input[type="date"], select{
+    width:100%; padding:9px 10px; font-size:14px;
+    border:1px solid var(--line); background:#fff; color:var(--ink);
+    border-radius:2px; font-family:inherit;
+  }
+  input:focus, select:focus{outline:2px solid var(--forest-dim); outline-offset:1px;}
+
+  .choice-row{display:flex; flex-wrap:wrap; gap:18px; align-items:center; margin-top:2px;}
+  .choice{display:flex; align-items:center; gap:7px; font-size:13.5px;}
+  .choice input{width:16px; height:16px;}
+
+  .signoff{display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-top:6px;}
+  @media(max-width:560px){ .signoff{grid-template-columns:1fr;} }
+  .sig-line{border-bottom:1px solid var(--ink); height:40px; margin-bottom:6px;}
+  .sig-label{font-size:12px; color:#5B5748;}
+  .date-boxes{display:flex; gap:4px; margin-top:6px;}
+  .date-boxes input{width:30px; text-align:center; padding:8px 0;}
+  .date-hint{font-size:11px; color:#8A8570; margin-top:4px;}
+
+  .form-actions{
+    display:flex; gap:12px; flex-wrap:wrap; margin-top:8px; margin-bottom:30px;
+  }
+  .btn{
+    display:inline-block; padding:13px 22px; font-size:14.5px; text-decoration:none;
+    border-radius:3px; font-weight:600; border:none; cursor:pointer; font-family:inherit;
+  }
+  .btn-primary{background:var(--clay); color:var(--paper);}
+  .btn-secondary{border:1px solid var(--forest-dim); color:var(--forest); background:transparent;}
+
+  .form-note{font-size:12.5px; color:#6B6656; margin:-6px 0 22px;}
+
+  @media print{
+    body{background:#fff;}
+    header{background:#fff !important; color:var(--ink) !important; padding:0 0 18px;}
+    .eyebrow{color:var(--clay) !important;}
+    .back-link, .form-actions, .form-note{display:none;}
+    fieldset{break-inside:avoid; border:1px solid #999;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="eyebrow">Green City Estate</div>
+    <h1>Application Form</h1>
+    <a class="back-link" href="index.html">&larr; Back to Green City Estate</a>
+  </div>
+</header>
+
+<div class="wrap">
+  <p class="form-note">Fill in your details below, then use "Print / Save as PDF" to keep a copy or bring a completed printout to your site inspection.</p>
+
+  <form>
+    <fieldset>
+      <legend><span class="num">1</span>Personal Information</legend>
+      <div class="row two-col">
+        <div><label for="surname">Surname</label><input type="text" id="surname" name="surname"></div>
+        <div><label for="first-name">First Name</label><input type="text" id="first-name" name="first_name"></div>
+      </div>
+      <div class="row two-col">
+        <div><label for="other-names">Other Names</label><input type="text" id="other-names" name="other_names"></div>
+        <div><label for="dob">Date of Birth</label><input type="date" id="dob" name="dob"></div>
+      </div>
+      <div class="row two-col">
+        <div><label for="nationality">Nationality</label><input type="text" id="nationality" name="nationality"></div>
+        <div>
+          <label>Gender</label>
+          <div class="choice-row">
+            <label class="choice"><input type="radio" name="gender" value="Male"> Male</label>
+            <label class="choice"><input type="radio" name="gender" value="Female"> Female</label>
+          </div>
+        </div>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend><span class="num">2</span>Organizational Information</legend>
+      <div class="row"><label for="biz-name">Name of Business</label><input type="text" id="biz-name" name="business_name"></div>
+      <div class="row"><label for="biz-address">Full Address</label><input type="text" id="biz-address" name="business_address"></div>
+      <div class="row"><label for="biz-email">Email Address</label><input type="email" id="biz-email" name="business_email"></div>
+      <div class="row two-col">
+        <div><label for="biz-phone">Phone Number</label><input type="tel" id="biz-phone" name="business_phone"></div>
+        <div><label for="biz-website">Website (Optional)</label><input type="text" id="biz-website" name="business_website"></div>
+      </div>
+      <div class="row"><label for="biz-nature">Nature of Business</label><input type="text" id="biz-nature" name="business_nature"></div>
+    </fieldset>
+
+    <fieldset>
+      <legend><span class="num">3</span>Contact Details</legend>
+      <div class="row"><label for="res-address">Residential Address</label><input type="text" id="res-address" name="residential_address"></div>
+      <div class="row two-col">
+        <div><label for="state">State</label><input type="text" id="state" name="state"></div>
+        <div><label for="mobile1">Telephone (Mobile)</label><input type="tel" id="mobile1" name="mobile"></div>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend><span class="num">4</span>Valid Means of Identification</legend>
+      <div class="choice-row">
+        <label class="choice"><input type="checkbox" name="id_type" value="Driver's License"> Driver's License</label>
+        <label class="choice"><input type="checkbox" name="id_type" value="International Passport"> International Passport</label>
+        <label class="choice"><input type="checkbox" name="id_type" value="Voters Card"> Voters Card</label>
+        <label class="choice"><input type="checkbox" name="id_type" value="National ID Card"> National ID Card</label>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend><span class="num">5</span>Next of Kin</legend>
+      <div class="row"><label for="nok-name">Name of NOK</label><input type="text" id="nok-name" name="nok_name"></div>
+      <div class="row"><label for="nok-address">Full Address</label><input type="text" id="nok-address" name="nok_address"></div>
+      <div class="row"><label for="nok-email">Email Address</label><input type="email" id="nok-email" name="nok_email"></div>
+      <div class="row two-col">
+        <div><label for="nok-mobile">Mobile</label><input type="tel" id="nok-mobile" name="nok_mobile"></div>
+        <div><label for="nok-tel">Telephone</label><input type="tel" id="nok-tel" name="nok_telephone"></div>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend><span class="num">6</span>Employment Details</legend>
+      <div class="row"><label for="employer">Employer</label><input type="text" id="employer" name="employer"></div>
+      <div class="row"><label for="designation">Designation</label><input type="text" id="designation" name="designation"></div>
+      <div class="row two-col">
+        <div><label for="emp-mobile">Mobile</label><input type="tel" id="emp-mobile" name="employer_mobile"></div>
+        <div><label for="emp-address">Address</label><input type="text" id="emp-address" name="employer_address"></div>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend><span class="num">7</span>Land Use</legend>
+      <div class="row">
+        <label>Land Use</label>
+        <div class="choice-row">
+          <label class="choice"><input type="radio" name="land_use" value="Residential"> Residential</label>
+          <label class="choice"><input type="radio" name="land_use" value="Commercial"> Commercial</label>
+          <label class="choice"><input type="radio" name="land_use" value="Industrial"> Industrial</label>
+          <label class="choice"><input type="radio" name="land_use" value="Farm Land"> Farm Land</label>
+          <label class="choice"><input type="radio" name="land_use" value="Others"> Others</label>
+        </div>
+      </div>
+      <div class="row"><label for="land-size">Size of Land</label><input type="text" id="land-size" name="land_size"></div>
+    </fieldset>
+
+    <fieldset>
+      <legend><span class="num">8</span>Payment Plan</legend>
+      <div class="row">
+        <label>Payment Plan</label>
+        <div class="choice-row">
+          <label class="choice"><input type="radio" name="payment_plan" value="Outright"> Outright</label>
+          <label class="choice"><input type="radio" name="payment_plan" value="Installment"> Installment</label>
+          <label class="choice"><input type="radio" name="payment_plan" value="Mortgage"> Mortgage</label>
+        </div>
+      </div>
+      <div class="row"><label for="plan-amount-words">Amount in Words</label><input type="text" id="plan-amount-words" name="plan_amount_words"></div>
+    </fieldset>
+
+    <fieldset>
+      <legend><span class="num">9</span>Payment Method</legend>
+      <div class="row">
+        <label>Payment Method</label>
+        <div class="choice-row">
+          <label class="choice"><input type="radio" name="payment_method" value="Cheque"> Cheque</label>
+          <label class="choice"><input type="radio" name="payment_method" value="Bank Transfer"> Bank Transfer</label>
+          <label class="choice"><input type="radio" name="payment_method" value="Bank Draft"> Bank Draft</label>
+        </div>
+      </div>
+      <div class="row"><label for="method-amount-words">Amount in Words</label><input type="text" id="method-amount-words" name="method_amount_words"></div>
+      <div class="row"><label for="purpose">Purpose of Payment</label><input type="text" id="purpose" name="purpose_of_payment"></div>
+    </fieldset>
+
+    <fieldset>
+      <legend><span class="num">10</span>Realtor Details</legend>
+      <div class="row"><label for="realtor-name">Name of Realtor</label><input type="text" id="realtor-name" name="realtor_name"></div>
+      <div class="row two-col">
+        <div><label for="realtor-phone">Phone Number</label><input type="tel" id="realtor-phone" name="realtor_phone"></div>
+        <div><label for="realtor-email">Email Address</label><input type="email" id="realtor-email" name="realtor_email"></div>
+      </div>
+      <div class="row two-col">
+        <div><label for="realtor-reg">Reg Number</label><input type="text" id="realtor-reg" name="realtor_reg"></div>
+        <div><label for="realtor-amount-words">Amount Paid in Words</label><input type="text" id="realtor-amount-words" name="realtor_amount_words"></div>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend><span class="num">11</span>Official Use</legend>
+      <div class="row two-col">
+        <div><label for="processed-by">Processed by</label><input type="text" id="processed-by" name="processed_by"></div>
+        <div><label for="approved-by">Approved by</label><input type="text" id="approved-by" name="approved_by"></div>
+      </div>
+      <div class="row signoff">
+        <div>
+          <div class="sig-line"></div>
+          <div class="sig-label">Signature</div>
+        </div>
+        <div>
+          <label>Date</label>
+          <div class="date-boxes">
+            <input type="text" maxlength="1" aria-label="D">
+            <input type="text" maxlength="1" aria-label="D">
+            <input type="text" maxlength="1" aria-label="M">
+            <input type="text" maxlength="1" aria-label="M">
+            <input type="text" maxlength="1" aria-label="Y">
+            <input type="text" maxlength="1" aria-label="Y">
+            <input type="text" maxlength="1" aria-label="Y">
+            <input type="text" maxlength="1" aria-label="Y">
+          </div>
+          <div class="date-hint">DD&nbsp;&nbsp;&nbsp;MM&nbsp;&nbsp;&nbsp;&nbsp;YYYY</div>
+        </div>
+      </div>
+    </fieldset>
+
+    <div class="form-actions">
+      <button type="button" class="btn btn-primary" onclick="window.print()">Print / Save as PDF</button>
+      <a class="btn btn-secondary" href="assets/buyer-form.pdf" target="_blank" rel="noopener">Download original PDF instead</a>
+    </div>
+  </form>
+</div>
+
+</body>
+</html>
