@@ -104,14 +104,24 @@
     padding:13px 22px; font-size:14.5px; text-decoration:none;
     border-radius:3px; font-weight:600; border:none; cursor:pointer; font-family:inherit;
   }
-  .btn-primary{background:var(--whatsapp); color:#fff;}
-  .btn-primary:hover{background:var(--whatsapp-dim);}
-  .btn-primary svg{width:18px; height:18px; fill:#fff;}
+  .btn-primary{background:var(--clay); color:var(--paper);}
+  .btn-secondary{border:1px solid var(--forest-dim); color:var(--forest); background:transparent;}
+  .btn-whatsapp{background:var(--whatsapp); color:#fff;}
+  .btn-whatsapp:hover{background:var(--whatsapp-dim);}
+  .btn-whatsapp svg{width:18px; height:18px; fill:#fff;}
 
   .form-note{font-size:12.5px; color:#6B6656; margin:-6px 0 22px;}
   .submit-status{font-size:13px; color:var(--forest); margin-bottom:26px; display:none;}
   .submit-status.show{display:block;}
   .submit-status.error{color:var(--clay);}
+
+  @media print{
+    body{background:#fff;}
+    header{background:#fff !important; color:var(--ink) !important; padding:0 0 18px;}
+    .eyebrow{color:var(--clay) !important;}
+    .back-link, .form-actions, .form-note, .submit-status{display:none;}
+    fieldset{break-inside:avoid; border:1px solid #999;}
+  }
 </style>
 </head>
 <body>
@@ -125,7 +135,7 @@
 </header>
 
 <div class="wrap">
-  <p class="form-note">Fill in your details below, then tap "Submit via WhatsApp" to send your completed application to us directly.</p>
+  <p class="form-note">Fill in your details below, then use "Print / Save as PDF" to keep a copy or bring a completed printout to your site inspection, or tap "Submit via WhatsApp" to send your completed application to us directly.</p>
 
   <form id="application-form">
     <fieldset>
@@ -286,7 +296,9 @@
     </fieldset>
 
     <div class="form-actions">
-      <button type="button" class="btn btn-primary" id="submit-whatsapp-btn">
+      <button type="button" class="btn btn-primary" onclick="window.print()">Print / Save as PDF</button>
+      <a class="btn btn-secondary" href="assets/buyer-form.pdf" target="_blank" rel="noopener">Download original PDF instead</a>
+      <button type="button" class="btn btn-whatsapp" id="submit-whatsapp-btn">
         <svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.28-1.38a9.86 9.86 0 0 0 4.76 1.21h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.85 9.85 0 0 0 12.04 2m0 1.67c2.2 0 4.27.86 5.83 2.42a8.23 8.23 0 0 1 2.42 5.83c0 4.55-3.7 8.24-8.25 8.24a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.18 8.18 0 0 1-1.26-4.38c0-4.55 3.7-8.25 8.24-8.25M8.53 7.33c-.16 0-.43.06-.66.31-.22.25-.86.84-.86 2.05 0 1.21.88 2.38 1 2.54.13.17 1.72 2.62 4.16 3.67.58.25 1.03.4 1.39.51.58.18 1.11.16 1.53.09.47-.07 1.44-.59 1.64-1.16.2-.57.2-1.06.14-1.16-.06-.1-.23-.16-.48-.28-.25-.13-1.44-.71-1.66-.79-.22-.08-.39-.13-.55.13-.16.25-.63.79-.77.95-.14.17-.28.19-.53.06-.25-.13-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.39-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.16.04-.31-.02-.44-.07-.13-.55-1.35-.76-1.85-.2-.48-.4-.42-.55-.42h-.02" /></svg>
         Submit via WhatsApp
       </button>
